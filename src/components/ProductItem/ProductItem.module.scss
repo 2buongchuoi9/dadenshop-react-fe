@@ -1,0 +1,44 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  padding: 6px 20px;
+  cursor: pointer;
+  // font-size: 16px;
+
+  &:hover {
+    background: var(--color_line);
+    &:last-child {
+      border-radius: 0 0 8px 8px;
+    }
+    .name {
+      color: var(--color_primary);
+    }
+  }
+}
+
+.img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.info {
+  flex: 1;
+  margin-left: 12px;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.icon {
+  // margin-left: 6px;
+  color: rgb(88, 83, 93);
+}
+
+.gia {
+  font-size: 18px;
+  color: rgba(22, 24, 35, 0.5);
+}

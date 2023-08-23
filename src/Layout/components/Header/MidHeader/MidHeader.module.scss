@@ -1,0 +1,37 @@
+:root {
+  --with-btn-search: 44px;
+}
+.wrapper {
+  // background-color: aqua;
+  position: relative;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+.mid-header-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon {
+  transition: all 0.25s ease-in-out 0s;
+  font-size: 20px;
+}
+
+.dropDown-menu {
+  display: flex;
+  flex-wrap: nowrap;
+  border: 1px solid var(--color_line);
+  background-color: rgba(22, 24, 35, 0.06);
+  height: var(--with-btn-search);
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 5px;
+  color: var(--color_border);
+  font-size: 17px;
+  padding-left: 10px;
+}

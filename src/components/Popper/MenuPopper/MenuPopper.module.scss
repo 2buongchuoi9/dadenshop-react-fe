@@ -1,0 +1,48 @@
+.tippy-menu {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+}
+
+.propper-menu {
+  width: 100%;
+  // padding: 0 20px;
+  // position: absolute;
+}
+
+.item-categorie {
+  display: flex;
+  align-items: center;
+  padding: 5px 40px 5px 20px;
+
+  &:hover {
+    background-color: var(--color_line);
+    &:last-child {
+      border-radius: 0 0 8px 8px;
+    }
+  }
+  &:hover .icon {
+    transform: scale(1.2);
+  }
+
+  &:hover .text {
+    color: var(--color_primary);
+  }
+
+  &.text:last-child {
+    padding-bottom: 10px;
+  }
+
+  .text {
+    padding-left: 20px;
+    font-size: 16px;
+    font-weight: 100;
+  }
+  .icon {
+    color: #1445c5;
+    transition: all 0.5s ease;
+    // transition: all 0.25s ease-in-out 0s;
+    // font-size: 20px;
+  }
+}

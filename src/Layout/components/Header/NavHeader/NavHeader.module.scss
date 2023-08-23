@@ -1,0 +1,84 @@
+:root {
+  --cl-hover: #fbce1d;
+  --cl-bg: #1445c5;
+}
+
+.wrapper {
+  background-color: var(--cl-bg);
+  color: white;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 550;
+  margin-bottom: 10px;
+  li {
+    display: inline-flex;
+    padding: 10px 20px;
+    align-items: center;
+
+    &:hover > a {
+      color: white;
+    }
+
+    &:has(> .sub-menu) {
+      position: relative;
+    }
+  }
+}
+
+ul .sub-menu {
+  display: none;
+  position: absolute;
+  padding-top: 8px;
+  left: 0;
+  top: 100%;
+  // box-shadow: 0 2px 4px #e6e6e6;
+  border-radius: 8px;
+  background: rgb(255, 255, 255);
+  box-shadow: rgb(0 0 0 / 12%) 0px 2px 12px;
+
+  & > li:not(:has(.sub-menu)) {
+    color: white;
+    width: 100%;
+    &:hover {
+      background-color: var(--color_line);
+      // background-color: black;
+      &:last-child {
+        border-radius: 0 0 8px 8px;
+      }
+      & > a {
+        color: var(--cl-bg);
+      }
+    }
+  }
+}
+
+.icon {
+  font-size: 20px;
+  align-items: center;
+}
+
+nav li:hover > .sub-menu {
+  display: block;
+}
+
+a {
+  display: inline-flex;
+  align-items: center;
+  color: black;
+}
+.sub-menu a {
+  color: #828282;
+  font-size: 14px;
+}
+
+li:has(.active) {
+  background-color: var(--cl-hover);
+  a {
+    color: white;
+  }
+}

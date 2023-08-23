@@ -1,0 +1,40 @@
+.wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-left: 30px;
+  cursor: pointer;
+}
+.icon {
+  display: flex;
+  font-size: 1.5rem;
+  justify-items: center;
+  color: var(--color_primary);
+  justify-content: center;
+  position: relative;
+}
+.right {
+  padding-left: 10px;
+}
+.title {
+  font-size: 12px;
+}
+.df {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.count {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  width: 60%;
+  height: 60%;
+  font-size: 13px;
+  color: white;
+  border-radius: 100%;
+  background-color: cadetblue;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}

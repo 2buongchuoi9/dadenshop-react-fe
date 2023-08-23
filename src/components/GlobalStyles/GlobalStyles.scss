@@ -1,0 +1,46 @@
+@import 'normalize.css';
+
+:root {
+  --bs-gutter-x: 1.5rem;
+  --default-width-layout: 1320px;
+  --color_line: #dcdcdc;
+  --color_primary: #1445c5;
+  --color_border: #828282;
+  --color_btn_border: #1445c5;
+  --color_body: #535353;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: var(--default-width-layout);
+  width: 100%;
+  margin: auto;
+}
+
+// Scrollbar CSS
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
