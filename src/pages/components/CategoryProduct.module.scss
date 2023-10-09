@@ -1,0 +1,26 @@
+.active {
+  background-color: red;
+  color: #fff;
+}
+
+.first {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px 10px 20px;
+  .title {
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+}
+
+.content {
+  // background-color: var(--bg_color_body);
+  // background-color: red;
+}
+
+.btn {
+  margin-right: 10px;
+  &:last-child {
+    margin-right: 0;
+  }
+}

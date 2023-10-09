@@ -1,22 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
 
 import App from './App';
 import GlobalStyles from './components/GlobalStyles';
-
-
-
-
+import { Provider } from 'react-redux';
+import store, { history } from './app/store';
+import { BrowserRouter } from 'react-router-dom';
+import { HistoryRouter as Router } from 'redux-first-history/rr6';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <GlobalStyles>
-      <App />
-    </GlobalStyles>
-  </BrowserRouter>
-
+  <>
+    <Provider store={store}>
+      <Router history={history}>
+        {/* <BrowserRouter> */}
+        <GlobalStyles>
+          <App />
+        </GlobalStyles>
+        {/* </BrowserRouter> */}
+      </Router>
+    </Provider>
+  </>,
 );
-
-

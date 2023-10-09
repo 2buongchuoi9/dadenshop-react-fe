@@ -1,44 +1,113 @@
-.wrapper {
-  display: flex;
-  align-items: center;
-  padding: 6px 20px;
-  cursor: pointer;
-  // font-size: 16px;
-
-  &:hover {
-    background: var(--color_line);
-    &:last-child {
-      border-radius: 0 0 8px 8px;
-    }
-    .name {
-      color: var(--color_primary);
-    }
+.product-item {
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid var(--color_line);
+  .top {
+    overflow: hidden;
+    position: relative;
+    transition: all 0.5s ease;
+    width: 100%;
   }
 }
 
-.img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
+.top {
+  .img {
+    display: block;
+    font-size: 0;
+    text-align: center;
+    position: relative;
+    transition: all 0.5s ease;
+  }
 }
 
-.info {
-  flex: 1;
-  margin-left: 12px;
+.sale {
+  // display: flex;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  // width: 35px;
+  background-color: #638dfa;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 2px 5px;
+  padding-right: 10px;
+  &::after {
+    content: '';
+    left: 100%;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    clip-path: polygon(100% 0, 50% 50%, 100% 100%, 50% 100%, 0 50%, 25% 0);
+    width: 16px;
+    height: 100%;
+    transform: translateX(-50%);
+    background-color: #638dfa;
+  }
 }
 
-.name {
-  font-size: 20px;
-  font-weight: 500;
+.right-buttons {
+  position: absolute;
+  top: 10px;
+  right: -100px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s ease;
+
+  :not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+.bottom-buttons {
+  position: absolute;
+  width: 100%;
+  bottom: -60px;
+  transition: all 0.5s ease;
+
+  .btn-mua {
+    margin: 0 5%;
+    width: 90%;
+    height: 35px;
+    // padding: 0;
+  }
 }
 
-.icon {
-  // margin-left: 6px;
-  color: rgb(88, 83, 93);
+.product-item:hover {
+  .right-buttons {
+    right: 10px;
+  }
+  .bottom-buttons {
+    bottom: 10px;
+  }
+  .img {
+    scale: 1.02;
+  }
 }
 
-.gia {
-  font-size: 18px;
-  color: rgba(22, 24, 35, 0.5);
+.bottom {
+  align-content: center;
+  :not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+.ten-sp {
+  display: flex;
+  font-size: 1rem;
+  justify-content: center;
+  font-weight: 600;
+  // align-items: center;
+  &:hover {
+    color: var(--color_primary);
+  }
+}
+
+.gia-sp {
+  display: flex;
+  justify-content: center;
+  .gia-goc {
+    color: #828282;
+    text-decoration: line-through;
+  }
+  .gia-km {
+    color: var(--color_primary);
+  }
 }

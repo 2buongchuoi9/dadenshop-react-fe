@@ -1,47 +1,70 @@
 import MenuPopper from '~/components/Popper/MenuPopper';
+import classNames from 'classnames/bind';
 
-const ITEM = [
-  {
-    id: 1,
-    ten: 'Áo',
-    icon: 'http://localhost:8081/images/categories/1.svg',
-  },
-  {
-    id: 2,
-    ten: 'Quần',
-    icon: 'http://localhost:8081/images/categories/2.svg',
-  },
-  {
-    id: 3,
-    ten: 'Giày',
-    icon: 'http://localhost:8081/images/categories/3.svg',
-  },
-  {
-    id: 4,
-    ten: 'Phụ kiện',
-    icon: 'http://localhost:8081/images/categories/4.svg',
-  },
-  {
-    id: 5,
-    ten: 'Nón',
-    icon: 'http://localhost:8081/images/categories/5.svg',
-  },
-  {
-    id: 6,
-    ten: 'Đồng hồ',
-    icon: 'http://localhost:8081/images/categories/6.svg',
-  },
-];
+import style from './Home.module.scss';
+import { SliderBrand, SliderIcon, SliderImage } from '~/components/Slider';
+import { HotSale } from '../components';
+import { iconTitel } from '~/icon';
+import { memo, useEffect, useState } from 'react';
+import service from '~/services';
+import CategoryProduct from '../components/CategoryProduct';
+import CTKhuyenMai from '../components/CTKhuyenMai';
+import LoadingPage from '~/components/LoadingPage/LoadingPage';
+
+const cl = classNames.bind(style);
 
 function Home() {
+  const [ITEM, setITEM] = useState([]);
+  useEffect(() => {
+    const fechAPI = async () => {
+      const a = await service.category.getCategories();
+      setITEM(a.data);
+    };
+    fechAPI();
+  }, []);
   return (
-    <div className={'container'}>
-      <h2>trang home</h2>
-
-      <MenuPopper items={ITEM} visible="true">
-        <div style={{ backgroundColor: 'red' }}></div>
-      </MenuPopper>
+    <div className={cl('home-page')}>
+      <SliderImage time={3000}>
+        {ITEM.length > 0 && (
+          <MenuPopper items={ITEM} visible="true" width={200}>
+            <div style={{ height: '20px' }}></div>
+          </MenuPopper>
+        )}
+      </SliderImage>
+      <div className={cl('container', 'wrapper')}>
+        <h2>trang home</h2>
+        <div className={cl('o', 'hot-cate')}>
+          <h1 className={cl('title')}>Ưu đãi tối nhất</h1>
+          <SliderIcon items={iconTitel} className={cl('hot-slider')}></SliderIcon>
+        </div>
+        <div>
+          {/* custom api */}
+          <HotSale></HotSale>
+        </div>
+        <div className={cl('o')}>
+          <h1 className={cl('title')}>Nhãn hiệu phổ biến</h1>
+          <SliderBrand></SliderBrand>
+        </div>
+        <div className={cl('o')}>
+          <CategoryProduct category></CategoryProduct>
+        </div>
+        {/* <div className={cl('o')}>
+          <CategoryProduct brand></CategoryProduct>
+        </div> */}
+        <div className={cl('o')}>
+          <h1 className={cl('title')}>Ưu đãi thanh toán</h1>
+          <div className={cl('khuyenMai')}>
+            <CTKhuyenMai></CTKhuyenMai>
+          </div>
+        </div>
+        <div className={cl('o')}>
+          <h1 className={cl('title')}>Tin thời trang</h1>
+          <div className={cl('khuyenMai')}>
+            <CTKhuyenMai></CTKhuyenMai>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
-export default Home;
+export default memo(Home);

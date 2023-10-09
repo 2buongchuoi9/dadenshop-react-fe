@@ -1,0 +1,33 @@
+.div {
+  max-width: 600px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .title {
+    display: flex;
+    align-items: center;
+    .text {
+      font-size: 1.4rem;
+      padding: 20px;
+      font-weight: 600;
+      text-align: center;
+      margin: auto;
+    }
+    .mg {
+      padding-right: 65px;
+    }
+    .icon:hover {
+      color: var(--color_primary);
+    }
+    .btn-back {
+      margin: auto;
+      padding-right: 65px;
+    }
+  }
+
+  & > div {
+    width: 100%;
+  }
+}

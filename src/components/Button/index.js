@@ -12,11 +12,13 @@ function Button({
   outline = false,
   rounded = false,
   disabled = false,
+  circle = false,
   size = 'none',
   children,
   className,
   iconLeft,
   iconRight,
+  width = false,
   onClick,
   ...props
 }) {
@@ -42,6 +44,10 @@ function Button({
     [size]: size,
     disabled,
     outline,
+    primary,
+    rounded,
+    circle,
+    width,
   });
 
   return (

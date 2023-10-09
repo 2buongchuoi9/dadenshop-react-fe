@@ -4,6 +4,7 @@
 .wrapper {
   // background-color: aqua;
   position: relative;
+  background-color: var(--color_primary);
 }
 
 .row {
@@ -15,6 +16,7 @@
 .mid-header-right {
   display: flex;
   justify-content: flex-end;
+  color: #e7e7e7;
 }
 
 .icon {
@@ -25,13 +27,22 @@
 .dropDown-menu {
   display: flex;
   flex-wrap: nowrap;
-  border: 1px solid var(--color_line);
+  // border: 1px solid var(--color_line);
   background-color: rgba(22, 24, 35, 0.06);
   height: var(--with-btn-search);
   align-items: center;
   padding: 0 10px;
   border-radius: 5px;
-  color: var(--color_border);
+  color: #fff;
   font-size: 17px;
   padding-left: 10px;
+  background-color: var(--bg-header-mid);
+}
+
+.fixed {
+  position: fixed;
+  width: 100%;
+  // background-color: #ececec;
+  top: 0;
+  z-index: 99999999;
 }

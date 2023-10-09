@@ -1,0 +1,51 @@
+.hot-sale {
+  background-color: #033ea7;
+  border-radius: 20px;
+}
+.box-title {
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+  padding-top: 10px;
+  .title-img {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+.tab-menu {
+  display: flex;
+  align-items: center;
+  .btn {
+    color: black;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 5px 10px;
+    border: none;
+    font-size: 1rem;
+    // margin-top: 20px;
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+    &:hover {
+      color: #fff;
+      background-color: black;
+    }
+  }
+  .active {
+    color: #fff;
+    background-color: black;
+  }
+}
+
+.countdown {
+  display: flex;
+  align-items: center;
+}
+
+// format time
+.timeee {
+  background-color: #fff;
+  padding: 3px;
+  border-radius: 3px;
+}

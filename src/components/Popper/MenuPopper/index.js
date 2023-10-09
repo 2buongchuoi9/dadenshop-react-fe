@@ -2,22 +2,24 @@ import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
 import style from './MenuPopper.module.scss';
-import { Wrapper as WrapperPopper } from '~/components/Popper';
+// import { Wrapper as WrapperPopper } from '~/components/Popper';
 import Button from '~/components/Button';
+import WrapperPopper from '../WrapperPopper';
 
 const cl = classNames.bind(style);
 
-function MenuPopper({ items, children, visible = false }) {
+function MenuPopper({ items, children, visible = false, width }) {
+  const st = width ? { width: width } : {};
   const render = () => {
     return (
       <div className={cl('propper-menu')} tabIndex="-1">
         <WrapperPopper>
-          <ul>
+          <ul style={{ maxHeight: '400px', overflow: 'auto', overflowY: 'overlay' }}>
             {items &&
               items.map((v) => (
-                <li key={v.id} className={cl('item-categorie')}>
-                  <Button to={v.link} iconLeft={v.icon && <img src={v.icon} alt={v.ten} className={cl('icon')} />}>
-                    <span className={cl('text')}>{v.ten}</span>
+                <li key={v.id + v.ten} className={cl('item-categorie')} style={st}>
+                  <Button to={v.link} iconLeft={v.avatar && <img src={v.avatar} alt={v.name} className={cl('icon')} />}>
+                    <span className={cl('text')}>{v.name}</span>
                   </Button>
                 </li>
               ))}

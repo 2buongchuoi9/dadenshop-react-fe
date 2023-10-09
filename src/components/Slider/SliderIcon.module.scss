@@ -1,0 +1,16 @@
+.items {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  &:not(:last-child) {
+    margin-right: 40px;
+  }
+  .icon {
+    margin-bottom: 10px;
+  }
+  &:hover {
+    &:last-child {
+      color: var(--color_primary);
+    }
+  }
+}

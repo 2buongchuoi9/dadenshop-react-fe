@@ -1,0 +1,101 @@
+.form_group {
+  // background-color: red;
+  margin-top: 20px;
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 0.75rem;
+  }
+
+  .group_item {
+    // -webkit-appearance: none;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #e8e8e8;
+    // border-radius: 0;
+    height: 40px;
+    padding: 10px 20px;
+    width: 100%;
+  }
+  .input {
+    border-radius: 3px;
+    color: #222;
+    font-size: 16px;
+    line-height: 40px;
+    padding: 0 15px;
+    width: 100%;
+  }
+
+  .input:focus {
+    outline: none;
+    // border-color: #e11b1e;
+    border-color: var(--color_primary);
+  }
+  .input:focus + .label:before {
+    // color: #e11b1e;
+    color: var(--color_primary);
+  }
+  .label:before {
+    color: #777;
+    content: attr(title);
+    font-size: 14px;
+    left: 15px;
+    line-height: 40px;
+    position: absolute;
+    top: 0;
+    transition: all 0.3s;
+  }
+  .errors {
+    color: #e11b1e;
+    font-size: 13px;
+    font-style: italic;
+    padding-left: 15px;
+    margin-top: 2px;
+  }
+
+  .eye {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    padding-bottom: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #777;
+    &:hover {
+      color: var(--color_primary);
+    }
+  }
+}
+
+.form_group input:not(:placeholder-shown) + .label:before,
+// .form_group .input:valid + .label:before,
+.form_group .input:focus + .label:before {
+  background-color: transparent;
+  font-size: 12px;
+  left: 9px;
+  line-height: 20px;
+  padding: 0 6px;
+  top: -10px;
+}
+
+// checkbox
+.cb {
+  display: flex;
+  align-items: center;
+
+  .input-cb {
+    margin-right: 5px;
+  }
+
+  .label-cb {
+    color: #777;
+    font-size: 14px;
+  }
+}
+
+.input.err {
+  // border: 1px solid;
+  border-color: #e11b1e;
+}

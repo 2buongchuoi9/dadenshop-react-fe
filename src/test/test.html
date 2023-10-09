@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Cửa hàng bán hàng</title>
+  </head>
+  <body>
+    <ul>
+      <li><div class="item"></div></li>
+      <li><div class="item"></div></li>
+      <li><div class="item"></div></li>
+    </ul>
+
+    <header>
+      <h1>Cửa hàng bán hàng</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Trang chủ</a></li>
+          <li><a href="#">Sản phẩm</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="featured-products">
+      <h2>Sản phẩm nổi bật</h2>
+      <div class="product">
+        <img src="product1.jpg" alt="Sản phẩm 1" />
+        <h3>Sản phẩm 1</h3>
+        <p>Giá: $99.99</p>
+        <button>Mua ngay</button>
+      </div>
+      <div class="product">
+        <img src="product2.jpg" alt="Sản phẩm 2" />
+        <h3>Sản phẩm 2</h3>
+        <p>Giá: $149.99</p>
+        <button>Mua ngay</button>
+      </div>
+      <!-- Thêm các sản phẩm khác tương tự -->
+    </section>
+
+    <footer>
+      <p>&copy; 2023 Cửa hàng bán hàng. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
+<style>
+  /* Reset some default styles for consistency */
+  body,
+  h1,
+  h2,
+  h3,
+  p,
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  nav ul {
+    list-style: none;
+  }
+  nav li {
+    display: inline;
+    margin-right: 20px;
+  }
+  nav a {
+    text-decoration: none;
+    color: #fff;
+  }
+  .featured-products {
+    width: 80%;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .product {
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    background-color: #fff;
+  }
+  .product img {
+    max-width: 100%;
+  }
+  footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #333;
+    color: #fff;
+  }
+</style>

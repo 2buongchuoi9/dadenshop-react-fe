@@ -2,39 +2,77 @@
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  margin-left: 30px;
+  height: 40px;
+  padding: 0 10px;
+  margin-left: 10px;
+  border-radius: 10px;
   cursor: pointer;
+  color: #e7e7e7;
+
+  &:hover {
+    background-color: var(--bg-header-mid);
+  }
+
+  .right {
+    padding-left: 10px;
+  }
+  .df {
+    font-size: 12px;
+  }
+  .title {
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .count {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    width: 60%;
+    height: 60%;
+    font-size: 13px;
+    color: white;
+    border-radius: 100%;
+    background-color: cadetblue;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+  }
 }
+
 .icon {
   display: flex;
   font-size: 1.5rem;
   justify-items: center;
-  color: var(--color_primary);
+  // color: #fff;
   justify-content: center;
   position: relative;
 }
-.right {
-  padding-left: 10px;
-}
-.title {
-  font-size: 12px;
-}
-.df {
-  font-weight: 700;
-  font-size: 15px;
+
+// user tài khoản
+.user {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: var(--bg-header-mid);
+  border-radius: 10px;
+  padding: 0 10px;
+  cursor: pointer;
+  margin-left: 10px;
+
+  .name {
+    font-size: 13px;
+  }
 }
 
-.count {
-  position: absolute;
-  right: -5px;
-  top: -5px;
-  width: 60%;
-  height: 60%;
-  font-size: 13px;
-  color: white;
-  border-radius: 100%;
-  background-color: cadetblue;
-  display: flex;
-  justify-content: center;
-  justify-items: center;
+.propper-menu {
+  .li {
+    padding: 5px;
+    &:hover {
+      background-color: var(--color_line);
+    }
+    &:hover > .btn {
+      color: var(--color_primary);
+    }
+  }
 }

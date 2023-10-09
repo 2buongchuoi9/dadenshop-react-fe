@@ -9,6 +9,11 @@
   width: 100%;
   // padding: 0 20px;
   // position: absolute;
+  &:hover {
+    ul {
+      overflow-y: hidden;
+    }
+  }
 }
 
 .item-categorie {

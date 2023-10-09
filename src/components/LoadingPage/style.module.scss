@@ -1,0 +1,54 @@
+.page-loader {
+  background: hsla(0, 0%, 100%, 0.6) 50% no-repeat;
+  bottom: 0;
+  display: block;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100vw;
+  z-index: 99999;
+
+  .logo {
+    background-image: url('http://localhost:8081/images/logoDaDen.png');
+    // background-image: url('http://localhost:8081/images/bg/bg1.png');
+    border-radius: 50%;
+    height: 50px;
+    left: calc(50% - 25px);
+    position: absolute;
+    top: calc(50% - 25px);
+    width: 50px;
+    z-index: 10;
+  }
+
+  .loader {
+    animation: rotate 0.35s linear infinite;
+    background: linear-gradient(270deg, #fff 30%, #d70018);
+    border: 0;
+    border-radius: 50%;
+    height: 90px;
+    left: calc(50% - 45px);
+    position: absolute;
+    top: calc(50% - 45px);
+    width: 90px;
+    -webkit-animation: rotate 0.35s linear infinite;
+
+    &:before {
+      background: #fff;
+      border-radius: 100%;
+      bottom: 6px;
+      content: ' ';
+      left: 6px;
+      position: absolute;
+      right: 6px;
+      top: 6px;
+    }
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}

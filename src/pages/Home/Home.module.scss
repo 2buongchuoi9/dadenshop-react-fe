@@ -1,3 +1,28 @@
-.conc {
-  color: red;
+.home-page {
+  position: relative;
+  width: 100%;
+}
+
+.hot-cate {
+  background-color: #fff;
+  padding: 20px 25px;
+  // margin-bottom: 20px;
+  // .hot-slider {
+  //   margin-top: 20px;
+  // }
+}
+
+.o {
+  background-color: #fff;
+  padding: 20px 25px;
+  margin: 20px 0;
+
+  .title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0 20px 10px 20px;
+  }
+}
+.khuyenMai {
+  display: flex;
 }

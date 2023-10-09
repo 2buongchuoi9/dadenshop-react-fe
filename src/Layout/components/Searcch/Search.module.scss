@@ -11,50 +11,44 @@
 .loading,
 .clear {
   position: absolute;
-  right: 50px;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
   color: #828282;
+  border: none;
+  margin-right: 5px;
+  transition: 0.5s all ease-out;
 }
 
-.clear {
-  border: none;
-}
 .search {
   height: 200px;
   display: flex;
   width: 361px;
   position: relative;
-  max-height: 44px;
-  background-color: rgba(22, 24, 35, 0.06);
+  max-height: 36px;
   input {
-    // font-size: 1.2rem;
-    font-size: 18px;
-    border: none;
+    font-size: 17.5px;
+    border-radius: 0 15px 15px 0;
+    border: 0;
     outline: none;
-    background-color: transparent;
+    background-color: #fff;
     height: 100%;
     width: 100%;
-    padding: 0 15px;
-    border-radius: 5px 0 0 5px;
-    border: 1px solid var(--color_line);
-    border-right: none;
     caret-color: var(--color_primary);
-    padding-right: 35px;
-
-    &:focus {
-      border: 1px solid var(--color_border);
-      border-right: none;
-    }
+    padding-right: 25px;
   }
 }
 
 .search-btn {
-  border-radius: 0 5px 5px 0;
-  border: 1px solid #1445c5;
-  background-color: #1445c5;
-  color: white;
-  width: 44px;
+  border-radius: 15px 0 0 15px;
+  border: none;
+  background-color: #fff;
+  // color: white;
+  width: 40px;
+  height: 100%;
+  .icon {
+    height: 100%;
+  }
 
   &:hover {
     .icon {
