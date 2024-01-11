@@ -9,6 +9,8 @@ import { ProductItem } from '../ProductItem';
 const cl = classNames.bind(style);
 
 const SliderProduct = ({ row = 1, itemInRow = 5, items, time = 3000 }) => {
+  console.log('item ', items);
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.

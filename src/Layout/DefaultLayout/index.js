@@ -15,7 +15,7 @@ function DefaultLayout({ children }) {
       dispatch(infosAction.get(a.data));
     };
     fechApi();
-  }, []);
+  }, [dispatch]);
 
   return (
     <>

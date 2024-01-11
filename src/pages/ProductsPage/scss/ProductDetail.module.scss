@@ -1,0 +1,41 @@
+.cccc {
+  // background-color: yellow;
+  display: flex !important;
+  position: absolute;
+  top: 100%;
+  height: 50px;
+  margin-top: 5px;
+}
+.a {
+  border: 1px solid orange;
+  border-radius: 10px;
+}
+
+.img-thumnei {
+  padding: 2px;
+  border: 1px solid black;
+  border-radius: 5px;
+  // &:active {
+  //   border: 1px solid orange;
+  //   border-radius: 5px;
+  // }
+}
+.cccc {
+  .slick-active {
+    img {
+      border: 1px solid orange;
+      border-radius: 5px;
+    }
+  }
+}
+.sl {
+  transition: all 1.8s ease-in-out;
+  &:hover {
+    .next {
+      display: block !important;
+    }
+  }
+}
+.next {
+  transition: all 1.8s ease-in-out;
+}

@@ -7,7 +7,7 @@ import Sider from 'antd/es/layout/Sider';
 
 const getItems = (key, label, children) => ({ key, label, children });
 
-function ModalImage({ onSelectImage, addText }) {
+function ModalImage({ onSelectImage, addText, textBnt }) {
   const [show, setShow] = useState(false);
   const [item, setItem] = useState(null);
 
@@ -24,7 +24,7 @@ function ModalImage({ onSelectImage, addText }) {
           setShow(true);
         }}
       >
-        Thêm ảnh
+        {textBnt ? textBnt : 'Thêm ảnh'}
       </Button>
       <Modal
         open={show}

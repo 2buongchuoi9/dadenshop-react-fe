@@ -12,13 +12,13 @@ function ProductItemSearch({ data }) {
     <Link to={'/'} className={cl('wrapper')}>
       {data && (
         <>
-          <img className={cl('img')} src={data.img} alt={data.ten} />
+          <img className={cl('img')} src={data.image} alt={data.name} />
           <div className={cl('info')}>
             <h5 className={cl('name')}>
-              <span>{data.ten}</span>
+              <span>{data.name}</span>
             </h5>
             <IoLogoUsd className={cl('icon')} />
-            <span className={cl('gia')}>{data.gia}</span>
+            <span className={cl('gia')}>{data.price}</span>
           </div>
         </>
       )}

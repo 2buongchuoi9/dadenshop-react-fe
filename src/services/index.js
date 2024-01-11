@@ -5,6 +5,8 @@ import * as file from './fileService';
 import * as news from './newsService';
 import * as newsCategory from './newsCategory';
 import * as info from './infoService';
+import * as promotion from './promotionService';
+import * as saleOff from './saleOffService';
 
 const service = {
   product,
@@ -14,6 +16,8 @@ const service = {
   news,
   newsCategory,
   info,
+  promotion,
+  saleOff,
 };
 
 export default service;

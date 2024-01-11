@@ -11,7 +11,7 @@ const cartsSlice = createSlice({
   reducers: {
     addCart: (state, action) => {
       const { product, quantity } = action.payload;
-
+      console.log('action', action.payload);
       const indexProductInCart =
         state.products.length > 0 ? state.products.findIndex((v) => v.product.id === product.id) : -1;
 
@@ -34,7 +34,7 @@ const autoMathCart = (state) => {
   const { a, b } = state.products.reduce(
     (count, v) => ({
       a: count.a + v.quantity,
-      b: count.b + v.quantity * v.product.gia,
+      b: count.b + v.quantity * v.product.price,
     }),
     { a: 0, b: 0 },
   );

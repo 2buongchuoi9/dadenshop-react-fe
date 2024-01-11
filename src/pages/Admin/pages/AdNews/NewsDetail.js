@@ -2,19 +2,22 @@ import { Button, Card, Descriptions, Input, Layout, Radio, Space, Switch, messag
 import Sider from 'antd/es/layout/Sider';
 import { Content } from 'antd/es/layout/layout';
 import JoditEditor from 'jodit-react';
-import { memo, useEffect, useMemo, useRef, useState } from 'react';
+import { memo, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import service from '~/services';
 import { DownOutlined, PlusOutlined, UpOutlined } from '@ant-design/icons';
 import ModalImage from '../../component/ModalImage';
+import { Context } from '~/App';
 
 const getItems = (key, label, children) => ({ key, label, children });
 
 function NewsDetail({ add = false }) {
   const { id } = useParams();
   const editor = useRef(null);
-  const [messageApi, contextHolder] = message.useMessage();
+
+  const { messageApi } = useContext(Context);
+
   const [news, setNews] = useState(null);
   const [newsCategory, setNewsCategory] = useState([]);
   const [show, setShow] = useState({
@@ -35,6 +38,18 @@ function NewsDetail({ add = false }) {
     // const currentCursorPosition = editor.current.selection.getCursor();
     setNews({ ...news, content: text });
     // editor.current.selection.setCursor(currentCursorPosition);
+  };
+
+  const handleUpdate = () => {
+    console.log('cập nhật');
+    console.log(news);
+    if (!add)
+      service.news.update(
+        news,
+        () => messageApi.open({ key: 1, type: 'loading', content: 'loading' }),
+        () => messageApi.open({ key: 1, type: 'success', content: 'success' }),
+        (e) => messageApi.open({ key: 1, type: 'error', content: 'false: ' + e }),
+      );
   };
 
   useEffect(() => {
@@ -131,21 +146,7 @@ function NewsDetail({ add = false }) {
                     getItems(
                       'up',
                       '',
-                      <Button
-                        type="primary"
-                        size="large"
-                        block
-                        onClick={() => {
-                          console.log('cập nhật');
-                          console.log(news);
-                          service.news.update(
-                            news,
-                            () => messageApi.open({ key: 1, type: 'loading', content: 'loading' }),
-                            () => messageApi.open({ key: 1, type: 'success', content: 'success' }),
-                            (e) => messageApi.open({ key: 1, type: 'error', content: 'false: ' + e }),
-                          );
-                        }}
-                      >
+                      <Button type="primary" size="large" block onClick={handleUpdate}>
                         Cập nhật
                       </Button>,
                     ),
@@ -217,7 +218,6 @@ function NewsDetail({ add = false }) {
       >
         Cập nhật
       </Button>
-      {contextHolder}
     </div>
   );
 }

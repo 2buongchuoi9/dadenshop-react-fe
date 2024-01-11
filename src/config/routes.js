@@ -5,6 +5,7 @@ const routerConfig = {
   shop: '/shop',
   cart: '/cart',
   products: '/products',
+  productDetail: '/products/:id',
   blog: '/blog',
   shoe: '/shoe',
   login: '/login',
@@ -20,6 +21,12 @@ const routerConfig = {
     products: {
       all: admin + '/products',
       add: admin + '/products/add',
+      detail: admin + '/products/:id',
+    },
+    promotion: {
+      all: admin + '/promotion',
+      add: admin + '/promotion/add',
+      detail: admin + '/promotion/:id',
     },
     category: admin + '/category',
     brands: admin + '/brands',
@@ -28,7 +35,11 @@ const routerConfig = {
       add: admin + '/media/add',
     },
     pages: admin + '/pages',
-    sales: admin + '/sales',
+    sales: {
+      all: admin + '/sales',
+      add: admin + '/sales/add',
+      detail: admin + '/sales/:id',
+    },
     users: admin + '/users',
     infos: admin + '/infos',
     setting: admin + '/setting',

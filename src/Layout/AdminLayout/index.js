@@ -1,17 +1,10 @@
-import { Layout, Menu, Breadcrumb, Space, Badge, Avatar, Button } from 'antd';
-import {
-  DesktopOutlined,
-  MenuOutlined,
-  PieChartOutlined,
-  ProfileOutlined,
-  TeamOutlined,
-  UserOutlined,
-} from '@ant-design/icons';
+import { Layout, Menu, Breadcrumb, Badge, Avatar, Button } from 'antd';
+import { MenuOutlined } from '@ant-design/icons';
 import { IoMdNotificationsOutline } from 'react-icons/io';
 import { HiOutlineMailOpen } from 'react-icons/hi';
 import { TfiMenuAlt } from 'react-icons/tfi';
 import { AiOutlineDashboard } from 'react-icons/ai';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 
 import style from './AdminLayout.module.scss';
@@ -19,7 +12,6 @@ import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import routerConfig from '~/config/routes';
 
 const { Header, Content, Footer, Sider } = Layout;
-const SubMenu = Menu.SubMenu;
 const cl = classNames.bind(style);
 
 const avt = 'http://localhost:8082/api/files/02b987f3495344bc97a3876e612cea39.jpg';
@@ -52,6 +44,12 @@ function AdminLayout({ children }) {
       item(admin.products.all, 'all product'),
       item(admin.products.add, 'add product'),
     ]),
+    item('4', 'Promotion', <AiOutlineDashboard size={25} />, [
+      item(admin.promotion.all, 'all promotion'),
+      item(admin.promotion.add, 'add promotion'),
+      item(admin.sales.all, 'all sale'),
+      item(admin.sales.add, 'add sale'),
+    ]),
   ];
 
   const itemBreadcrumb = () => {
@@ -69,8 +67,19 @@ function AdminLayout({ children }) {
 
   return (
     <div style={{}}>
-      <Layout style={{ minHeight: '100vh' }}>
-        <Sider collapsible collapsed={collapsed} onCollapse={onCollapse} style={{ width: '30%' }} trigger={null}>
+      <Layout hasSider style={{ minHeight: '100vh', width: '100%' }}>
+        <Sider
+          collapsible
+          collapsed={collapsed}
+          onCollapse={onCollapse}
+          trigger={null}
+          style={{
+            width: '100%',
+            overflowY: 'overlay',
+            height: '100vh',
+            position: 'fixed',
+          }}
+        >
           <div style={{ textAlign: 'center', margin: '10px 0' }}>
             <Link to={'/'}>
               <img src={lg} alt="" />
@@ -88,9 +97,9 @@ function AdminLayout({ children }) {
                 navigate(key);
               }
             }}
-          ></Menu>
+          />
         </Sider>
-        <Layout style={{ width: '60%' }}>
+        <Layout style={{ marginLeft: '200px' }}>
           <Header
             style={{
               background: '#fff',

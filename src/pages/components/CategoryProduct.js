@@ -29,23 +29,25 @@ function CategoryProduct({ brand = false, category = false, user = false }) {
         );
       } else if (category) {
         const categories = await service.category.getCategories();
-        console.log('categories');
-        console.log(categories);
+        console.log('categories', categories.data);
 
         items = await Promise.all(
           categories.data.map(async (v, i) => {
-            const a = await service.product.getProducts({ idCategory: v.id, limit: 10 });
+            const a = await service.product.getProducts({ categoryId: v.id, limit: 10 });
+            console.log('a', a);
+
             return {
               tab: v,
-              list: a.data,
+              list: a.data.list,
             };
           }),
         );
+        console.log('item', items);
       }
       setItems(items);
     };
     fecthAPI();
-  }, []);
+  }, [category, brand]);
 
   return (
     <div className={cl('cate-product')}>

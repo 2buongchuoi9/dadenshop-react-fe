@@ -36,7 +36,7 @@ function Search() {
     const fecthAPI = async () => {
       setLoading(true);
       const a = await searchProduct(vl);
-      setResultSearch(a);
+      setResultSearch(a.data.list);
       setLoading(false);
     };
     fecthAPI();
